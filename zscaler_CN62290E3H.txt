@@ -1,3 +1,4 @@
+!/bin/bash
 sudo tee  /usr/bin/zscaler-loopback.sh > /dev/null <<EOT
 ip link add name zscaler-ssh type dummy
 ip addr add 172.27.0.8/32 dev zscaler-ssh
@@ -9,7 +10,5 @@ sudo chmod a+x /usr/bin/zscaler-loopback.sh
 sudo /usr/bin/zscaler-loopback.sh
 
 echo "@reboot /usr/bin/zscaler-loopback.sh"  | sudo tee -a /var/spool/cron/crontabs/root
-
-
 
 docker run --name zscaler-connector -d --privileged --restart unless-stopped -e ZPA_PROVISION_KEY="2|api.private.zscaler.com|LT0iPpM/h6EfavTt9vz9PQ9MJ7aOySl7AhqF2NqaH5lUvuv1++DvxjaVLhTkyZ/IsqoiYwEtkOMtwkG3vVt0l072sauKaH6N9Ypa9QzuEDFmEr6sYIfBLVp3qGHcbcP24na2iF7LaQ3pG5RRolYQoVkHiAbMRpnhBmROk5g7Wn5Ukip6UjLO7qzNFkQAz1ua2QhccVMO6MfgHkFaKj/V6sP0fsNSxSK61cHvOvsbcwu+eXiZP4mcmXHutqao9q+gHc41Lb7AutcGKAJg70xSvm83Trt3k3xfHnUnWGs1rebJAkfuzo4thk2PKXEjdVM8dSyp3Fziat6hQFBbVDV1Vq9kWsozLIrnfvKWflyG2BXKB0k4Bo/xeE70wL7BYGYj" -e LIMITED_MEM="1" --add-host=601-CN62290E3H.local:172.27.0.8 zscaler/zpa-connector:latest.amd64
