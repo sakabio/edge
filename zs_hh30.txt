@@ -1,0 +1,3 @@
+
+docker run --name zscaler-connector -d --privileged --restart unless-stopped -e ZPA_PROVISION_KEY="2|api.private.zscaler.com|alsCovCqPurxR/sWAJZGDu+MYyucgWK3jNSJpjWl7cOx9B2lCRg7bRoLalq0CyO3/ARXgMEPHlFD9fiPXoJnq007zzEjVB0AcwdtX4MWLw9Uwruezw2rVQCpPMIVd3RewjkceFKdphDLHFmM1o+IKLYcL8ggIHIG2fbwhZwNsGdI7WH6bSP9GB5SdSgwf+QRKRo8JnZCfnOdZM7A40Y5lzgiAqGIdZVzR5IyUPQA1Kq54xdFzi2zC2Yw5EIKHaPhsFaqnUEDXYY8i2vo9qESG+ox0y/KuWmr4elj6HgPycQ/eKWVcWVvipyVMH+KXsEH8hOjgLnrOD6KdfEh/r3NJNhHSXNIrNW+vlAy/DbRL6Bgr61gMqqUIoog6Xw+Xq2P" -e LIMITED_MEM="1" --add-host=601-CN61470DKV.local:172.27.0.3 zscaler/zpa-connector:latest.amd64
+
